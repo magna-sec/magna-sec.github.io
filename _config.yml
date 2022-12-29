@@ -21,7 +21,7 @@ timezone: Europe/London
 
 title: Magna                          # the main title
 
-tagline: OSWE  OSCP  OSWP  CRTO  PACES  CRTE  CRTP  eJPT    # it will display as the sub-title
+tagline: OSWE | OSCP | OSWP | CRTO | PACES | CRTE | CRTP | eJPT    # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A blog-esc thing for scribbling my ramblings and writeups
