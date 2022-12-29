@@ -27,7 +27,7 @@ description: >-                        # used by seo meta and the atom feed
   A blog-esc thing for scribbling my ramblings and writeups
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://magna-sec.github.io'
 
 github:
   username: magna-sec             # change to your github username
