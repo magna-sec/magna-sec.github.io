@@ -1,0 +1,10 @@
+---
+title: Placeholder for templates nd shit
+date: 2022-12-29 15:26:11 +/-TTTT
+categories: [TOP_CATEGORIE, SUB_CATEGORIE]
+tags: [TAG]     # TAG names should always be lowercase
+---
+# TESTING
+
+- hi
+    - I lke turtles
