@@ -7,4 +7,4 @@ tags: [ctfs, hacking, htb]     # TAG names should always be lowercase
 # TESTING
 
 - hi
-    - I lke turtles and mangoes, ughh, ugghh
+    - I lke turtles and mangoes, ughh, uggh
