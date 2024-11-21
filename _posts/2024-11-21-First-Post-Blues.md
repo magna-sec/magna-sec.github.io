@@ -423,17 +423,17 @@ Reversed: ThirdAndFinal!!!
 Let's just do the first 3 characters in the XOR for visibility sake:
 ```
 01000111 0x47
-00010011 19
+00010011 19 == 0x13
  ^ ^ ^  
 01010100 T
 
 01111011 0x7B
-00010011 19
+00010011 19 == 0x13
  ^^ ^
 01101000 h
 
 01111010 0x7A
-00010011 19
+00010011 19 == 0x13
  ^^ ^  ^
 01101001 i
 ```
