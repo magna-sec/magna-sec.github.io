@@ -26,7 +26,7 @@ From the output we can deduce:
 - The file is 64-bit ELF file, meaning this will run on x86-64 bit Linux systems.
 - LSB (Least Significant Byte) endianness.
 - x86 instruction set.
-- Dynamically Linked. Indicates that the binary is dynamically linked, meaning it relies on external shared libraries (e.g., .so files).
+- Dynamically Linked. Indicates that the binary is dynamically linked, meaning it relies on external shared libraries (e.g. `.so` files).
 - Uses the standard Linux dynamic linker `/lib64/ld-linux-x86-64.so.2`
 - Minimum kernel version of GNU/Linux 3.2.0
 - Not Stripped meaning information is still present in the binary. This makes it easier for us to reverse.
