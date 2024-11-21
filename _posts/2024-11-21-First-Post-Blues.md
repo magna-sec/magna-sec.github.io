@@ -459,7 +459,7 @@ Well done hunter - consider yourself certified!
 
 Though no flag? Oh yes you need to spin up their server.
 
-```
+```bash
 magna@dojo:~$ nc 83.136.254.158 39456
 What is the file format of the executable?
 > 
