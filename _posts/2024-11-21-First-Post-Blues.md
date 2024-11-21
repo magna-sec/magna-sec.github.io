@@ -15,7 +15,7 @@ Challenge: https://app.hackthebox.com/challenges/Hunting%20License
 
 ## Binary Enumeration"? 
 What is this binary? Let's take a look:
-```bash
+```
 magna@dojo:~$ file license
 license: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5be88c3ed329c1570ab807b55c1875d429a581a7, for GNU/Linux 3.2.0, not stripped
 ```
@@ -160,7 +160,7 @@ P4ssw0rdTw0
 ![alt text](/assets/images/21-11-2024/nice.gif "....nice")
 
 There's no real remenants for the third password that appears to be `XOR`ed judging by the avaiable functions. Let's test the last two passwords:
-```bash
+```
 magna@dojo:~$ ./license 
 So, you want to be a relic hunter?
 First, you're going to need your license, and for that you need to pass the exam.
@@ -291,7 +291,7 @@ Obviously there's a lot of optimsation that can be done but I wanted to keep the
 
 Essentially the first byte is taken from `password` and put at the end of `buffer` so its filled from the back.
 Like:
-```bash
+```
 0wTdr0wss4P
 ^
 __________0
@@ -414,7 +414,7 @@ int main() {
     return 0;
 }
 ```
-```bash
+```
 magna@dojo:~$ ./xor 
 Reversed: ThirdAndFinal!!!
 ```
@@ -443,7 +443,7 @@ Password: `ThirdAndFinal!!!`
 ## The Finale
 
 Alright the last part, we now have all 3 passwords. First let's test these all work:
-```bash
+```
 magna@dojo:~$ ./license 
 So, you want to be a relic hunter?
 First, you're going to need your license, and for that you need to pass the exam.
@@ -457,7 +457,7 @@ Well done hunter - consider yourself certified!
 
 Though no flag? Oh yes you need to spin up their server.
 
-```bash
+```
 magna@dojo:~$ nc 83.136.254.158 39456
 What is the file format of the executable?
 > 
