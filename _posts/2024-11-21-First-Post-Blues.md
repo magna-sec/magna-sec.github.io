@@ -31,7 +31,7 @@ From the output we can deduce:
 - Minimum kernel version of GNU/Linux 3.2.0
 - Not Stripped meaning information is still present in the binary. This makes it easier for us to reverse.
 
-From the above information we can get even more information, primarily concerning external libarires it may be using and any information present in the binary due to not being stripped.
+From the above information we can get even more information, primarily concerning external libraries it may be using and any information present in the binary due to not being stripped.
 
 ```bash
 magna@dojo:~$ ldd license 
@@ -42,12 +42,12 @@ magna@dojo:~$ ldd license
 	/lib64/ld-linux-x86-64.so.2 (0x000078b4fef71000)
 ```
 
-We can now see the external shared libarries in use:
+We can now see the external shared libraries in use:
 - `linux-vdso.so.`: A virtual shared library provided by the Linux kernel. Mapped to `0x00007ffef73c0000` in process memory at runtime.
 - `libreadline.so.8`: Provides functions for command-line text input, including features like line editing, history, and autocompletion.  Mapped to `0x000078b4fef0b000` in process memory at runtime.
 - `libc.so.6`: The GNU C Library, mapped to `0x000078b4fec00000` in process memory at runtime.
-- `libtinfo.so.6`: Provides low-level terminal handling functions, used for programs that need direct interaction with terminal capabilities. Maped to `0x000078b4feed9000` in process memory at runtime.
-- `ld-linux-x86-64.so.2`: Tthe standard Linux dynamic linker, mapped to `0x000078b4fef71000` in process memory at runtime.
+- `libtinfo.so.6`: Provides low-level terminal handling functions, used for programs that need direct interaction with terminal capabilities. Mapped to `0x000078b4feed9000` in process memory at runtime.
+- `ld-linux-x86-64.so.2`: The standard Linux dynamic linker, mapped to `0x000078b4fef71000` in process memory at runtime.
 
 Let's also find the processes main function address (this will help later):
 ```
@@ -148,20 +148,20 @@ __FRAME_END__
 .comment
 ```
 
-Not stripping the binary has given us two potentialy passwords:
+Not stripping the binary has given us two potential passwords:
 ```
 PasswordNumeroUno
 0wTdr0wss4P
 ```
 
-From the previous `objdump` it could be infered there's 3 passwords, we have 2 currently. Also with the previous `objdump` we see a function called `reverse` and we have a string that looks suspicously like a password reversed.. hmmphhh?:
+From the previous `objdump` it could be inferred there's 3 passwords, we have 2 currently. Also with the previous `objdump` we see a function called `reverse` and we have a string that looks suspiciously like a password reversed.. hmmphhh?:
 ```
 PasswordNumeroUno
 P4ssw0rdTw0
 ```
 ![alt text](/assets/images/21-11-2024/nice.gif "....nice")
 
-There's no real remenants for the third password that appears to be `XOR`ed judging by the avaiable functions. Let's test the last two passwords:
+There's no real remnants for the third password that appears to be `XOR`ed judging by the available functions. Let's test the last two passwords:
 ```
 magna@dojo:~$ ./license 
 So, you want to be a relic hunter?
@@ -184,7 +184,7 @@ Looking good, it's time to summon Ghidra.
 
 Lovely we see our main function address matches up and we're presented with a decompiled main function!
 
-The main function appears to be simple, takes in a users input, convert to a `char` and compare against 3 defined `char`s and act accordingly. Simply put.. if anything other than `y`/`Y` is entered the program flows into the `if` block and ultiamtely executes `exit(-1)` terminating the program.
+The main function appears to be simple, takes in a users input, convert to a `char` and compare against 3 defined `char`s and act accordingly. Simply put.. if anything other than `y`/`Y` is entered the program flows into the `if` block and ultimately executes `exit(-1)` terminating the program.
 ```c
 if (((user_input != 'y') && (user_input != 'Y')) && (user_input != '\n'))
 {
@@ -193,7 +193,7 @@ if (((user_input != 'y') && (user_input != 'Y')) && (user_input != '\n'))
 }
 ```
 
-If the user enters the correct input (why wouldnt you?) then `exam()` is called.
+If the user enters the correct input (why wouldn't you?) then `exam()` is called.
 This is the meat and potatoes of this challenge (its that the right term?):
 ![alt text](/assets/images/21-11-2024/challenges.png "Challenges")
 
@@ -236,7 +236,7 @@ Hmphhh, `right click -> Data -> Choose Data Type -> type "char" -> char - BuiltI
 
 Lovely! It's the string we saw earlier, although it could be presumed this was being passed into the function its best to double check.
 
-Clicking on `reverse(&char_2,t,11)` in ghidra we are presented with the follow code `Reverse` code:
+Clicking on `reverse(&char_2,t,11)` in Ghidra we are presented with the follow code `Reverse` code:
 ```c
 void reverse(long buffer,long password,ulong length)
 
@@ -254,7 +254,7 @@ We could say "yeah this just reverses the string" but that's no fun... how does 
 
 On initial inspection it takes in 3 variables, buffer, password and a length. `buffer` where the reverse `char`s will be stored, `password` the `t` array with password reversed, `11` the length of the `password` array (10 `char`s followed by a null byte `00`).
 
-As Ghidra decompiles code it can add in unessary code due to compiler optimations etc. So let's use the code provide by Ghidra and write our own reverse function. 
+As Ghidra decompiles code it can add in unnecessary code due to compiler optimisations etc. So let's use the code provide by Ghidra and write our own reverse function. 
 
 Our Code using the function from Ghidra:
 ```c
@@ -289,7 +289,7 @@ Original: 0wTdr0wss4P
 Reversed: P4ssw0rdTw0
 ```
 
-Obviously there's a lot of optimsation that can be done but I wanted to keep the code close to the Ghidra output.
+Obviously there's a lot of optimisation that can be done but I wanted to keep the code close to the Ghidra output.
 
 Essentially the first byte is taken from `password` and put at the end of `buffer` so its filled from the back.
 Like:
@@ -368,7 +368,7 @@ Wait... I remember this from the `strings` output... yep `G{zawR}wUz}r`
 
 Anyway in Ghidra we see a call to the function ``
 
-Clicking on `xor(&local_38,&t2,17,19)` in ghidra we are presented with the follow code `xor` code:
+Clicking on `xor(&local_38,&t2,17,19)` in Ghidra we are presented with the follow code `xor` code:
 ```c
 void xor(long buffer, long ciphertext, ulong length, byte key)
 {
@@ -467,7 +467,7 @@ What is the file format of the executable?
 
 Well that's certainly different to the binary we have, let's continue.
 We have all the answers to the questions so let's be very lazy and write a python script to submit the whole thing. 
-Though the script is likely going to be some static varirables and just submitting them this is good practice for later when we need to interact with a service.
+Though the script is likely going to be some static variables and just submitting them this is good practice for later when we need to interact with a service.
 
 ```python
 from sys import argv,exit
