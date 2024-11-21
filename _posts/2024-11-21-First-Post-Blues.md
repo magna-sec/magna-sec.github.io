@@ -83,14 +83,14 @@ magna@dojo:~$ objdump -d license
 <SNIP>
 ```
 Lovely it's `0x0000000000401172`! We now have a general idea of the binary and also have it's starting point (main address). Though its been snipped we are also presented with other function addresses:
-```bash
+```
 00000000004011e1 <reverse>:
 0000000000401237 <xor>:
 000000000040128a <exam>:
 ```
 
 Let's now run the binary to see the output we're working with:
-```bash
+```
 magna@dojo:~$ ./license 
 So, you want to be a relic hunter?
 First, you're going to need your license, and for that you need to pass the exam.
@@ -101,7 +101,7 @@ Not even close!
 ```
 
 As with previous challenges we're presented with a prompt asking for a password. As this binary is `not stripped` there could potentially be strings in memory. Oh wait.. strings ;).
-```bash
+```
 magna@dojo:~$ strings license 
 /lib64/ld-linux-x86-64.so.2
 __gmon_start__
