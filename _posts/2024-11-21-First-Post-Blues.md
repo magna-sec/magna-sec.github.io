@@ -17,7 +17,7 @@ Challenge: [Hunting License](https://app.hackthebox.com/challenges/Hunting%20Lic
 
 ## Binary Enumeration"? 
 What is this binary? Let's take a look:
-```
+```bash
 magna@dojo:~$ file license
 license: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5be88c3ed329c1570ab807b55c1875d429a581a7, for GNU/Linux 3.2.0, not stripped
 ```
