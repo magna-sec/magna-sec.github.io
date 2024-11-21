@@ -11,7 +11,9 @@ However, this time we're gonna go through the challenge purely with Ghidra to in
 
 ![alt text](/assets/images/21-11-2024/cat.gif "meow")
 
-Challenge: https://app.hackthebox.com/challenges/Hunting%20License
+Challenge: [Hunting License](https://app.hackthebox.com/challenges/Hunting%20License)
+
+ 
 
 ## Binary Enumeration"? 
 What is this binary? Let's take a look:
