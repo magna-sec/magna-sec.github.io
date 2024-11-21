@@ -48,7 +48,8 @@ We can now see the external shared libarries in use:
 - `ld-linux-x86-64.so.2`: Tthe standard Linux dynamic linker, mapped to `0x000078b4fef71000` in process memory at runtime.
 
 Let's also find the processes main function address (this will help later):
-```magna@dojo:~$ objdump -d license 
+```
+magna@dojo:~$ objdump -d license 
 <SNIP>
 0000000000401172 <main>:
   401172:	55                   	push   %rbp
