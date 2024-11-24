@@ -15,7 +15,7 @@ Challenge: [Hunting License](https://app.hackthebox.com/challenges/Hunting%20Lic
 
  
 
-## Binary Enumeration"? 
+## Binary Enumeration? 
 What is this binary? Let's take a look:
 ```bash
 magna@dojo:~$ file license
