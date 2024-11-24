@@ -1,8 +1,8 @@
 ---
 title: VR - HTB Hunting License Deep Dive
 date: 2024-11-21 09:16:11 +/-TTTT
-categories: [HTB, VR]
-tags: [htb, vr]     # TAG names should always be lowercase
+categories: [HTB, RevEng]
+tags: [htb, reveng]     # TAG names should always be lowercase
 ---
 # Whats the point of this "blog post"? 
 We're going to take a HTB challenge and try and dive a little deeper than normal. In essence the challenge is reversing a Linux ELF binary and extracting three passwords. This can easily be done with GDB, by watching the `strcmp` calls or by literally stepping through the whole thing.
