@@ -598,7 +598,7 @@ GG WP
 ![alt text](/assets/images/27-11-2024/completed.gif "Completed")
 
 
-## TLDR:
+## TLDR
 - Password for `r.thompson` in `cascadeLegacyPwd` via LDAP.
 - Decrypt credentials for `s.smith` in `VNC Install.reg` in `Data` share.
 - `s.smith` can access `Audit$` share, decrypt password in Audit.db with iv/key in executable/dll.
