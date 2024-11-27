@@ -315,6 +315,7 @@ Looks to be creds! Let's decrypt them:
 
 We need the following part from the VNC file:
 - "Password"=hex:6b,cf,2a,4b,6e,5a,ca,0f
+
 ```bash
 echo -n 6bcf2a4b6e5aca0f | xxd -r -p | openssl enc -des-cbc --nopad --nosalt -K e84ad660c4721ae0 -iv 0000000000000000 -d
 
