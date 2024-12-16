@@ -289,9 +289,11 @@ We don't currently have a flag... but I'll take this stage to move to `root.txt`
 ## Obtaining root.txt
 Checking easy wins such as kerberoasting, asrep-roasting, delegation and shares etc produced nothing.
 
-Previously we noted the OS running was `Windows Server 2008 R2`, various checks for CVE's for that version returned nothing. However MS14-068 did not!
+Previously we noted the OS running was `Windows Server 2008 R2`, various checks for CVE's for that version returned nothing. However `MS14-068` did not!
 
-https://learn.microsoft.com/en-us/security-updates/securitybulletins/2014/ms14-068
+[Microsoft MS14-068 Security Bulletin](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2014/ms14-068)
+
+
 
 ```
 This security update is rated Critical for all supported editions of Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, Windows Server 2012, and Windows Server 2012 R2. The update is also being provided on a defense-in-depth basis for all supported editions of Windows Vista, Windows 7, Windows 8, and Windows 8.1. For more information, see the Affected Software section.
@@ -316,8 +318,8 @@ Win?
 
 
 ## TLDR
-- Weird port open `1337`, that is running out dated IIS.
+- Port `1337` open, that is running out dated IIS.
 - Through shortname scanning we find `secure_notes` and a weird file.
-- Weird file has two passwords hidden in a CTF manner, gives us access to MSSQL.
+- Weird file contains two passwords and a username hidden in a CTF manner, gives us access to MSSQL.
 - Password in MSSQL gives us access to the domain as `james`.
-- Domain Controller is vulnerable to MS14-068 "Golden Pac".
+- Domain Controller is vulnerable to `MS14-068` "Golden Pac".
