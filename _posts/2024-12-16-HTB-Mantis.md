@@ -1,6 +1,6 @@
 ---
 title: HTB - CCT INF Path - Mantis 
-date: 2024-12-16 13:37:11 +/-TTTT
+date: 2024-12-16 09:37:11 +/-TTTT
 categories: [CTFs, HTB]
 tags: [ctfs, hacking, htb, ctt_inf]     # TAG names should always be lowercase
 ---
