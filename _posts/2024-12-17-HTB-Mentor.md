@@ -392,5 +392,4 @@ if __name__ == "__main__":
     users = fetch_all_users()
     for user in users:
         print(f"ID: {user.id}, Email: {user.email}, Username: {user.username}, Password: {user.password}")
-
 ```
