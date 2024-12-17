@@ -6,7 +6,7 @@ tags: [ctfs, hacking, htb, ctt_inf]     # TAG names should always be lowercase
 ---
 
 
-![alt text](/assets/images/16-12-2024/mantis/card.png "Cascade Card")
+![alt text](/assets/images/16-12-2024/mantis/card.png "Mantis Card")
 
 # Initial Setup and 
 
