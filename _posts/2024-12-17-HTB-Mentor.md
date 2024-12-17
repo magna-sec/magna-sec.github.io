@@ -1,6 +1,6 @@
 ---
 title: HTB - CCT INF Path - Mentor 
-date: 2024-12-17 09:37:11 +/-TTTT
+date: 2024-12-17 10:37:11 +/-TTTT
 categories: [CTFs, HTB]
 tags: [ctfs, hacking, htb, ctt_inf]     # TAG names should always be lowercase
 ---
